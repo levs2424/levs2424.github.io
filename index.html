@@ -1,25 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Levanya Pillay | Data Science Portfolio</title>
     <style>
-        body { font-family: 'Arial', sans-serif; background-color: #0b0f19; color: white; text-align: center; }
-        .hero { padding: 100px 20px; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=80'); background-size: cover; }
-        .project-card { background: #1a1f2e; border: 1px solid #30363d; border-radius: 10px; padding: 20px; width: 300px; margin: 20px auto; }
-        .btn { background: #238636; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 15px; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0d1117; color: #c9d1d9; line-height: 1.6; margin: 0; }
+        .hero { padding: 120px 20px; text-align: center; background: linear-gradient(rgba(13, 17, 23, 0.8), rgba(13, 17, 23, 0.8)), url('https://images.unsplash.com/photo-1518186239717-2e9b1367444c?auto=format&fit=crop&w=1500&q=80'); background-size: cover; border-bottom: 1px solid #30363d; }
+        .hero h1 { font-size: 3rem; color: #58a6ff; margin-bottom: 10px; }
+        .container { max-width: 900px; margin: auto; padding: 40px 20px; }
+        .section-title { color: #58a6ff; border-bottom: 2px solid #21262d; padding-bottom: 10px; margin-top: 40px; }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px; }
+        .skill-item { background: #161b22; padding: 15px; border-radius: 8px; border: 1px solid #30363d; }
+        .project-card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 30px; margin-top: 20px; text-align: center; transition: 0.3s; }
+        .project-card:hover { border-color: #58a6ff; }
+        .btn { background: #238636; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; display: inline-block; font-weight: bold; margin-top: 20px; }
+        .btn:hover { background: #2ea043; }
+        .highlight { color: #58a6ff; font-weight: bold; }
     </style>
 </head>
 <body>
-    <div class="hero">
-        <h1>MY NAME IS LEVANYA</h1>
-        <p> An ASPIRING DATA SCIENTIST | AI DEVELOPER</p>
+
+<div class="hero">
+    <h1>LEVANYA PILLAY</h1>
+    <p style="font-size: 1.2rem; letter-spacing: 2px;">ICT GRADUATE (CUM LAUDE) | ASPIRING DATA SCIENTIST</p>
+</div>
+
+<div class="container">
+    <h2 class="section-title">The Data Story</h2>
+    <p>
+        As an <span class="highlight">ICT graduate from Durban University of Technology</span>, I have always been a critical thinker driven by complex problem-solving. However, my true passion for Data Science was sparked during the development of my <b>Budgeteer Application</b>. 
+    </p>
+    <p>
+        The moment I began <span class="highlight">preprocessing raw data</span> and fine-tuning the <b>DistilBERT Natural Language Processing model</b>, something clicked. Seeing an AI accurately transform messy bank transactions into structured financial insights made me absolutely fall in love with the power of data. Since then, I have been eager to use data to find smarter ways of doing things in a professional environment.
+    </p>
+
+    <h2 class="section-title">Technical Expertise</h2>
+    <div class="skills-grid">
+        <div class="skill-item"><b>AI & ML:</b><br>DistilBERT, NLP, Scikit-Learn </div>
+        <div class="skill-item"><b>Data Analysis:</b><br>Pandas, NumPy, MatPlotlib </div>
+        <div class="skill-item"><b>Backend:</b><br>Python, Flask, C# (MVC) </div>
+        <div class="skill-item"><b>Database:</b><br>SQL, SQLite, SQL Alchemy </div>
     </div>
 
-    <h2>MY WORK</h2>
+    <h2 class="section-title">Featured Project</h2>
     <div class="project-card">
-        <h3>💰 Budgeteer Application</h3>
-        <p>An AI-powered finance tool using <b>DistilBERT</b> to categorize expenses.</p>
-        <a href="https://github.com/levs2424/BudgeteerApplication" class="btn">View My Code</a>
+        <h3>💰 Budgeteer: AI Expense Classifier</h3>
+        <p>A full-stack application that automates financial tracking using machine learning.</p>
+        <ul style="text-align: left; display: inline-block;">
+            <li>Integrated <b>DistilBERT</b> for high-accuracy transaction categorization.</li>
+            <li>Built with <b>Python & Flask</b> with full database migration history.</li>
+            <li>Designed for clean, intuitive financial visualization.</li>
+        </ul><br>
+        <a href="https://github.com/levs2424/BudgeteerApplication" class="btn">View Technical Documentation</a>
     </div>
+
+    <h2 class="section-title">Experience & Honors</h2>
+    <p>🎓 <b>Bachelor of Information and Communication Technology</b> - Graduated Cum Laude </p>
+    <p>🏫 <b>Peer Tutor:</b> Mentored junior ICT students by simplifying complex technical concepts </p>
+</div>
+
 </body>
 </html>
