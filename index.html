@@ -6,13 +6,13 @@
     <title>Levanya Pillay | Data Science Portfolio</title>
     <style>
         :root {
-            --bg-color: #0b0f17;
-            --card-bg: #131b27;
-            --accent-cyan: #38bdf8;
-            --accent-indigo: #818cf8;
-            --text-main: #f3f4f6;
-            --text-muted: #9ca3af;
-            --border-color: #1e293b;
+            --bg-color: #0f1117;
+            --card-bg: #181b25;
+            --accent-rose: #f472b6;
+            --accent-mauve: #c084fc;
+            --text-main: #fcf7fa;
+            --text-muted: #a7abb9;
+            --border-color: #272a38;
         }
 
         body { 
@@ -27,14 +27,14 @@
         .hero { 
             padding: 100px 20px 80px; 
             text-align: center; 
-            background: radial-gradient(circle at top, #1e1b4b 0%, var(--bg-color) 70%);
+            background: radial-gradient(circle at top, #3b112c 0%, var(--bg-color) 70%);
             border-bottom: 1px solid var(--border-color); 
         }
 
         .hero h1 { 
             font-size: 3.2rem; 
             margin: 0;
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-indigo));
+            background: linear-gradient(135deg, #f472b6, #fb7185, #c084fc);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             letter-spacing: -0.5px;
@@ -42,7 +42,7 @@
 
         .hero p {
             font-size: 1.15rem;
-            color: var(--accent-cyan);
+            color: #fbcfe8;
             letter-spacing: 2.5px;
             margin-top: 10px;
             font-weight: 600;
@@ -57,7 +57,7 @@
         .section-title { 
             font-size: 1.75rem;
             color: var(--text-main); 
-            border-left: 4px solid var(--accent-cyan);
+            border-left: 4px solid var(--accent-rose);
             padding-left: 15px;
             margin-top: 50px;
             margin-bottom: 25px;
@@ -79,31 +79,31 @@
 
         .skill-item:hover {
             transform: translateY(-3px);
-            border-color: var(--accent-indigo);
+            border-color: var(--accent-rose);
         }
 
         .skill-item b {
-            color: var(--accent-cyan);
+            color: var(--accent-rose);
             display: block;
             margin-bottom: 5px;
         }
 
         /* Highlight Card for Current Work */
         .featured-research {
-            background: linear-gradient(145deg, #1e1b4b, var(--card-bg));
-            border: 1px solid var(--accent-indigo);
+            background: linear-gradient(145deg, #2a1226, var(--card-bg));
+            border: 1px solid var(--accent-rose);
             border-radius: 16px;
             padding: 35px;
             margin-top: 25px;
-            box-shadow: 0 10px 30px -10px rgba(129, 140, 248, 0.15);
+            box-shadow: 0 10px 30px -10px rgba(244, 114, 182, 0.15);
             position: relative;
         }
 
         .badge-active {
-            background: rgba(56, 189, 248, 0.15);
-            color: var(--accent-cyan);
-            border: 1px solid var(--accent-cyan);
-            padding: 4px 12px;
+            background: rgba(244, 114, 182, 0.15);
+            color: #fbcfe8;
+            border: 1px solid var(--accent-rose);
+            padding: 4px 14px;
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: bold;
@@ -122,8 +122,8 @@
         }
 
         .project-card:hover { 
-            border-color: var(--accent-cyan);
-            box-shadow: 0 8px 25px -5px rgba(56, 189, 248, 0.1);
+            border-color: var(--accent-mauve);
+            box-shadow: 0 8px 25px -5px rgba(192, 132, 252, 0.12);
         }
 
         .project-card h3, .featured-research h3 {
@@ -133,19 +133,20 @@
         }
 
         .btn { 
-            background: linear-gradient(135deg, var(--accent-cyan), #0284c7);
-            color: #ffffff; 
+            background: linear-gradient(135deg, #f472b6, #e879f9);
+            color: #181124; 
             padding: 10px 22px; 
             text-decoration: none; 
-            border-radius: 8px; 
+            border-radius: 20px; 
             display: inline-block; 
-            font-weight: 600; 
+            font-weight: 700; 
             margin-top: 15px;
-            transition: opacity 0.2s ease;
+            transition: opacity 0.2s ease, transform 0.2s ease;
         }
 
         .btn:hover { 
-            opacity: 0.9;
+            opacity: 0.95;
+            transform: scale(1.02);
         }
 
         ul {
