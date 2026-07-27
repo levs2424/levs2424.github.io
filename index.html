@@ -2,44 +2,224 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Levanya Pillay | Data Science Portfolio</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0d1117; color: #c9d1d9; line-height: 1.6; margin: 0; }
-        .hero { padding: 120px 20px; text-align: center; background: linear-gradient(rgba(13, 17, 23, 0.8), rgba(13, 17, 23, 0.8)), url('https://images.unsplash.com/photo-1518186239717-2e9b1367444c?auto=format&fit=crop&w=1500&q=80'); background-size: cover; border-bottom: 1px solid #30363d; }
-        .hero h1 { font-size: 3rem; color: #58a6ff; margin-bottom: 10px; }
-        .container { max-width: 900px; margin: auto; padding: 40px 20px; }
-        .section-title { color: #58a6ff; border-bottom: 2px solid #21262d; padding-bottom: 10px; margin-top: 40px; }
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px; }
-        .skill-item { background: #161b22; padding: 15px; border-radius: 8px; border: 1px solid #30363d; }
-        .project-card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 30px; margin-top: 20px; text-align: center; transition: 0.3s; }
-        .project-card:hover { border-color: #58a6ff; }
-        .btn { background: #238636; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; display: inline-block; font-weight: bold; margin-top: 20px; }
-        .btn:hover { background: #2ea043; }
-        .highlight { color: #58a6ff; font-weight: bold; }
+        :root {
+            --bg-color: #0b0f17;
+            --card-bg: #131b27;
+            --accent-cyan: #38bdf8;
+            --accent-indigo: #818cf8;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --border-color: #1e293b;
+        }
+
+        body { 
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; 
+            background-color: var(--bg-color); 
+            color: var(--text-main); 
+            line-height: 1.7; 
+            margin: 0; 
+            padding: 0;
+        }
+
+        .hero { 
+            padding: 100px 20px 80px; 
+            text-align: center; 
+            background: radial-gradient(circle at top, #1e1b4b 0%, var(--bg-color) 70%);
+            border-bottom: 1px solid var(--border-color); 
+        }
+
+        .hero h1 { 
+            font-size: 3.2rem; 
+            margin: 0;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-indigo));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--accent-cyan);
+            letter-spacing: 2.5px;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        .container { 
+            max-width: 900px; 
+            margin: auto; 
+            padding: 50px 20px; 
+        }
+
+        .section-title { 
+            font-size: 1.75rem;
+            color: var(--text-main); 
+            border-left: 4px solid var(--accent-cyan);
+            padding-left: 15px;
+            margin-top: 50px;
+            margin-bottom: 25px;
+        }
+
+        .skills-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 20px; 
+        }
+
+        .skill-item { 
+            background: var(--card-bg); 
+            padding: 20px; 
+            border-radius: 12px; 
+            border: 1px solid var(--border-color); 
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-indigo);
+        }
+
+        .skill-item b {
+            color: var(--accent-cyan);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Highlight Card for Current Work */
+        .featured-research {
+            background: linear-gradient(145deg, #1e1b4b, var(--card-bg));
+            border: 1px solid var(--accent-indigo);
+            border-radius: 16px;
+            padding: 35px;
+            margin-top: 25px;
+            box-shadow: 0 10px 30px -10px rgba(129, 140, 248, 0.15);
+            position: relative;
+        }
+
+        .badge-active {
+            background: rgba(56, 189, 248, 0.15);
+            color: var(--accent-cyan);
+            border: 1px solid var(--accent-cyan);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .project-card { 
+            background: var(--card-bg); 
+            border: 1px solid var(--border-color); 
+            border-radius: 16px; 
+            padding: 30px; 
+            margin-top: 25px; 
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover { 
+            border-color: var(--accent-cyan);
+            box-shadow: 0 8px 25px -5px rgba(56, 189, 248, 0.1);
+        }
+
+        .project-card h3, .featured-research h3 {
+            margin-top: 0;
+            font-size: 1.4rem;
+            color: #ffffff;
+        }
+
+        .btn { 
+            background: linear-gradient(135deg, var(--accent-cyan), #0284c7);
+            color: #ffffff; 
+            padding: 10px 22px; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            display: inline-block; 
+            font-weight: 600; 
+            margin-top: 15px;
+            transition: opacity 0.2s ease;
+        }
+
+        .btn:hover { 
+            opacity: 0.9;
+        }
+
+        ul {
+            padding-left: 20px;
+            color: var(--text-muted);
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+
+        ul li b {
+            color: var(--text-main);
+        }
+
+        .experience-box {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px 25px;
+            border: 1px solid var(--border-color);
+            margin-top: 15px;
+        }
     </style>
 </head>
 <body>
 
 <div class="hero">
     <h1>LEVANYA PILLAY</h1>
-    <p style="font-size: 1.2rem; letter-spacing: 2px;">ICT GRADUATE (CUM LAUDE) | ASPIRING DATA SCIENTIST</p>
+    <p>ICT GRADUATE (CUM LAUDE) | ASPIRING DATA SCIENTIST</p>
 </div>
 
 <div class="container">
     <h2 class="section-title">The Data Story</h2>
     <p>
-        As an <span class="highlight">ICT graduate from Durban University of Technology</span>, I have always been a critical thinker driven by complex problem-solving. However, my true passion for Data Science was sparked during the development of my <b>Budgeteer Application</b>. 
+        Throughout my ICT studies at Durban University of Technology, I built diverse systems and explored various facets of tech—from backend software architecture to database management. However, my trajectory completely shifted when I developed the <b>Budgeteer Application</b>.
     </p>
     <p>
-        The moment I began <span class="highlight">preprocessing raw data</span> and fine-tuning the <b>DistilBERT Natural Language Processing model</b>, something clicked. Seeing an AI accurately transform messy bank transactions into structured financial insights made me absolutely fall in love with the power of data. Since then, I have been eager to use data to find smarter ways of doing things in a professional environment.
+        Hands-on experience preprocessing raw data and fine-tuning the <b>DistilBERT Natural Language Processing model</b> sparked an unmistakable passion for Data Science. Witnessing algorithms parse unstructured data to reveal actionable financial intelligence made me immerse myself in the field. Today, I have made Data Science and Explainable AI the cornerstone of my <b>Honours research</b>, focusing on building reliable, transparent machine learning solutions for complex real-world challenges.
     </p>
 
     <h2 class="section-title">Technical Expertise</h2>
     <div class="skills-grid">
-        <div class="skill-item"><b>AI, ML </b><br>DistilBERT, Scikit-Learn </div>
-        <div class="skill-item"><b>Data Analysis:</b><br>Pandas, NumPy, MatPlotlib </div>
-        <div class="skill-item"><b>Backend:</b><br>Python, Flask, C# (MVC) </div>
-        <div class="skill-item"><b>Database:</b><br>SQL, SQLite, SQL Alchemy </div>
+        <div class="skill-item">
+            <b>AI & Machine Learning</b>
+            DistilBERT, NLP, Ensemble Models, Scikit-Learn
+        </div>
+        <div class="skill-item">
+            <b>Data Analytics</b>
+            Pandas, NumPy, Matplotlib, Data Preprocessing
+        </div>
+        <div class="skill-item">
+            <b>Backend & Engineering</b>
+            Python, Flask, C# (MVC)
+        </div>
+        <div class="skill-item">
+            <b>Databases & SQL</b>
+            Relational DB Design, SQL, SQLite, SQLAlchemy
+        </div>
+    </div>
+
+    <h2 class="section-title">Active Research</h2>
+    
+    <!-- Honours Research Card -->
+    <div class="featured-research">
+        <span class="badge-active">CURRENTLY WORKING ON</span>
+        <h3>🛡️ Financial Fraud Detection with Explainable AI</h3>
+        <p style="color: var(--text-muted);">
+            <b>Honours Academic Research Project:</b> <i>"Evaluating the Impact of Synthetic Resampling on Explainable Ensemble Models for Financial Fraud Detection"</i>
+        </p>
+        <ul>
+            <li>Investigating machine learning techniques to detect fraudulent financial transactions across highly imbalanced datasets.</li>
+            <li>Evaluating <b>synthetic resampling methods</b> to optimize detection sensitivity while mitigating false positives.</li>
+            <li>Applying <b>Explainable AI (XAI) frameworks</b> to ensure ensemble model predictions remain interpretable and transparent for risk analysis.</li>
+        </ul>
     </div>
 
     <h2 class="section-title">Featured Projects</h2>
@@ -47,42 +227,44 @@
     <!-- Budgeteer Project -->
     <div class="project-card">
         <h3>💰 Budgeteer: AI Expense Classifier</h3>
-        <p>A full-stack application that automates financial tracking using machine learning.</p>
-        <ul style="text-align: left; display: inline-block;">
-            <li>Integrated <b>DistilBERT</b> for high-accuracy transaction categorization.</li>
-            <li>Built with <b>Python & Flask</b> with full database migration history.</li>
-            <li>Designed for clean, intuitive financial visualization.</li>
-        </ul><br>
+        <p style="color: var(--text-muted);">A full-stack application automating financial tracking using machine learning.</p>
+        <ul>
+            <li>Integrated <b>DistilBERT</b> for high-accuracy, natural language transaction categorization.</li>
+            <li>Built with <b>Python & Flask</b> alongside full database migration tracking.</li>
+            <li>Designed for intuitive user interaction and clear financial visualization.</li>
+        </ul>
         <a href="https://github.com/levs2424/BudgeteerApplication" class="btn" target="_blank">View Technical Documentation</a>
     </div>
 
     <!-- Tute Me Project -->
     <div class="project-card">
         <h3>📚 Tute Me: Tutor Booking Web Application</h3>
-        <p>A web application that connects students with tutors to streamline appointment scheduling and academic support.</p>
-        <ul style="text-align: left; display: inline-block;">
-            <li>Built backend services using <b>Python & Flask</b> for managing users, availability, and session bookings.</li>
-            <li>Designed structured relational database schemas for tracking student and tutor interactions.</li>
-            <li>Implemented an intuitive interface for searching subjects and scheduling appointments.</li>
-        </ul><br>
+        <p style="color: var(--text-muted);">A web application built to connect students with academic tutors efficiently.</p>
+        <ul>
+            <li>Engineered backend services in <b>Python & Flask</b> to handle scheduling, availability, and session management.</li>
+            <li>Designed relational database schemas to safely manage user profiles and booking records.</li>
+            <li>Streamlined subject search workflows for seamless user experiences.</li>
+        </ul>
         <a href="https://github.com/levs2424/TuteMe" class="btn" target="_blank">View Technical Documentation</a>
     </div>
 
     <!-- Attendance System Project -->
     <div class="project-card">
-        <h3>📸 Automated Facial Recognition Attendance System</h3>
-        <p>A computer vision system that automates student attendance tracking using real-time facial recognition.</p>
-        <ul style="text-align: left; display: inline-block;">
-            <li>Utilizes <b>Python & OpenCV / Facial Recognition libraries</b> to detect and encode biometric facial features.</li>
-            <li>Automates real-time verification and logs attendance instantly to eliminate manual record-keeping.</li>
-            <li>Designed to improve class check-in speed and ensure data accuracy for university lectures.</li>
-        </ul><br>
+        <h3>📋 University Attendance Management System</h3>
+        <p style="color: var(--text-muted);">An automated web application streamlining student attendance verification and record-keeping.</p>
+        <ul>
+            <li>Built with <b>Python</b> backend logic to handle automated attendance logs and student check-ins.</li>
+            <li>Structured clean database integration to reduce manual tracking errors during lectures.</li>
+            <li>Designed simple administrative views for instant data retrieval and attendance reports.</li>
+        </ul>
         <a href="https://github.com/levs2424/AttendanceSystem" class="btn" target="_blank">View Technical Documentation</a>
     </div>
 
     <h2 class="section-title">Experience & Honors</h2>
-    <p>🎓 <b>Bachelor of Information and Communication Technology</b> - Graduated Cum Laude </p>
-    <p>🏫 <b>Peer Tutor:</b> Mentored junior ICT students by simplifying complex technical concepts </p>
+    <div class="experience-box">
+        <p style="margin: 0 0 10px 0;">🎓 <b>Bachelor of Information and Communication Technology</b> — Graduated Cum Laude</p>
+        <p style="margin: 0;">🏫 <b>Peer Tutor:</b> Mentored junior ICT students, breaking down complex programming concepts and data structures into digestible lessons.</p>
+    </div>
 </div>
 
 </body>
